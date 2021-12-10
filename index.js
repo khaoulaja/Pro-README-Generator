@@ -1,6 +1,5 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const Choices = require('inquirer/lib/objects/choices');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -82,7 +81,7 @@ const questions = [
         }
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'What license your project have?',
         choices: ['MIT License', 'Apache License', 'BSD License', 'GPL License', 'Mozilla Public License', 'Unlicensed'],
@@ -104,6 +103,9 @@ const questions = [
     }
 ];
 
+const promptInfo = () =>{
+    return inquirer.prompt(questions);
+}
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
@@ -112,3 +114,7 @@ function init() {}
 
 // Function call to initialize app
 init();
+promptInfo().then(({github,email, ...info})=> {
+
+     console.log(`${info.title}`)
+});
