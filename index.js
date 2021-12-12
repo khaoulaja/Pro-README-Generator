@@ -111,10 +111,8 @@ const questions = [
     }
 ];
 
-const promptInfo = () =>{
-    return inquirer.prompt(questions);
-}
-// TODO: Create a function to write README file
+
+// Create a function to write README file
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) =>{
         fs.writeFile(fileName, data, err =>{
@@ -124,20 +122,24 @@ function writeToFile(fileName, data) {
             }
             resolve({
                 ok: true,
-                message: "file created"
+                message: "README file created!"
             });
         });
     });
-}
+};
 
-// TODO: Create a function to initialize app
-function init() {}
+//Create a function to initialize app
+function init() {
+    return inquirer.prompt(questions)
+    .then((markdownInfo)=> {
+    return generateMarkdown(markdownInfo);
+    })
+    .then(markdown => {
+        return writeToFile('./dist/README.md',markdown)})
+    .then( response => console.log(response.message))
+    .catch(err => console.log(err));
+}
 
 // Function call to initialize app
 init();
-promptInfo()
-.then((markdownInfo)=> {
- return generateMarkdown(markdownInfo);
-})
-.then(markdown => {
-    return writeToFile('./dist/readme.md',markdown)});
+
