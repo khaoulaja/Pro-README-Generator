@@ -6,7 +6,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js')
 const questions = [
     {
         type: 'input',
-        name: 'github',
+        name: 'username',
         message: 'What is your github username? (Required)',
         validate: (gitInput) => {
             if (gitInput) {
@@ -72,7 +72,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Provide instructions and examples for use. (Required)',
+        message: 'Provide instructions for use. (Required)',
         validate: (usageInput) => {
             if (usageInput) {
                 return true;
@@ -83,25 +83,31 @@ const questions = [
         }
     },
     {
-        type: 'list',
-        name: 'license',
-        message: 'What license your project have?',
-        choices: ['MIT License', 'Apache License', 'BSD License', 'GPL License', 'Mozilla Public License', 'Unlicensed'],
-        default: 'Unlicensed'
-         
+        type: 'input',
+        name: 'contributing',
+        message: 'What does the user need to know about contributing? (Required)',
+        validate: (contributingInput) =>{
+            if(contributingInput){
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Please write tests for your application.(Require)',
-        validate: (testsInput) =>{
-            if (testsInput) {
-                return true;
-            } else {
-                console.log('Please write tests for your application');
-                return false;
-            }
-        }
+        message: 'Tests command:(Skip if no tests are available)',
+        default: 'No tests are available at the moment.'
+        
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What license your project have?',
+        choices: ['MIT License', 'Apache License', 'BSD License', 'GPL License', 'Mozilla Public License', 'The Unlicense'],
+        default: 'MIT License'
+         
     }
 ];
 
