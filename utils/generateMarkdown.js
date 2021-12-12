@@ -99,7 +99,7 @@ function generateMarkdown(data) {
   ## License
 
   This work is licensed under [${data.license}](${LicenseLink(data.license)}).<br/>
-  Copyright &copy; 2021 [${data.username}](https://github.com/${data.username})
+  &copy; 2021 [${data.title}](https://github.com/${data.username}/${data.title})
 
 `;
 }
