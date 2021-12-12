@@ -85,11 +85,12 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'What does the user need to know about contributing? (Required)',
+        message: 'Provide contributing guidelines. (Required)',
         validate: (contributingInput) =>{
             if(contributingInput){
                 return true;
             } else {
+                console.log('Please provide contributing guidelines!');
                 return false;
             }
         }
@@ -97,14 +98,14 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Tests command:(Skip if no tests are available)',
+        message: 'Provide test instructions.',
         default: 'No tests are available at the moment.'
         
     },
     {
         type: 'list',
         name: 'license',
-        message: 'What license your project have?',
+        message: 'What license your application have?',
         choices: ['MIT License', 'Apache License', 'BSD License', 'GPL License', 'Mozilla Public License', 'The Unlicense'],
         default: 'MIT License'
          
@@ -122,7 +123,7 @@ function writeToFile(fileName, data) {
             }
             resolve({
                 ok: true,
-                message: "README file created!"
+                message: "README file created under dist folder!"
             });
         });
     });

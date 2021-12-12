@@ -57,8 +57,11 @@ function LicenseLink(license) {
 //generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
   ${LicenseBadge(data.license)}
+
   ## Description 
+
   ${data.description}
   
   ## Table of Contents
@@ -81,25 +84,22 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## Tests
+
   ${data.tests}
 
   ## Contributing
+
   ${data.contributing}
 
   ## Questions
   
-  Please contact me at [${data.email}](mailto:${data.email}) if you have questions about this project. \
-  
+  Please contact me at [${data.email}](mailto:${data.email}) if you have questions about this project. <br/>
   To view more of my work, visit [my GitHub profile](https://github.com/${data.username}).
 
   ## License
 
-  This work is licensed under [${data.license}](${LicenseLink(data.license)}). \
-
+  This work is licensed under [${data.license}](${LicenseLink(data.license)}).<br/>
   Copyright &copy; 2021 [${data.username}](https://github.com/${data.username})
-
-
-
 
 `;
 }
