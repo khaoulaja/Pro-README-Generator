@@ -1,4 +1,4 @@
-# README-generator
+# Pro-README-Generator
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -24,6 +24,7 @@
   ## Usage 
 
    To use this application run : <br/> node index.js
+   For a demonstration about how to generate the README file visit the [walkthrough video](https://watch.screencastify.com/v/07B5r0omk9mmguGabfSF)
 
   ## Questions
   
@@ -34,5 +35,5 @@
 
   This work is licensed under [MIT License](https://opensource.org/licenses/MIT).<br/>
   Made with ❤ by Khaoula Jabour <br/>
-  &copy; 2021 README-generator
+  &copy; 2021 Pro-README-Generator
 
