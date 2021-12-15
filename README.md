@@ -23,7 +23,7 @@
   
   ## Usage 
 
-   To use this application run : <br/> node index.js
+   To use this application run : <br/> node index.js <br/>
    For a demonstration about how to generate the README file visit the [walkthrough video](https://watch.screencastify.com/v/07B5r0omk9mmguGabfSF)
 
   ## Questions
